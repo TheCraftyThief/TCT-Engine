@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Run Java checkstyle
         uses: nikitasavinov/checkstyle-action@0.4.0
+        with:
+          fail_on_error: true
 
   build:
     # Only run on PRs if the source branch is on a different repo. We do not need run everything twice.
