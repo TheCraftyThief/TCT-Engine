@@ -1,3 +1,1 @@
-include 'src'
-findProject(':src')?.name = 'engine'
-
+rootProject.name = 'engine'
