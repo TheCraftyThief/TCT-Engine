@@ -8,11 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: gradle/wrapper-validation-action@v1
-  style:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run Java checkstyle
-        uses: nikitasavinov/checkstyle-action@0.4.0
 
   build:
     # Only run on PRs if the source branch is on a different repo. We do not need run everything twice.
