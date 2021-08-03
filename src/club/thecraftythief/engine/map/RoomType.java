@@ -2,13 +2,10 @@ package club.thecraftythief.engine.map;
 
 import org.bukkit.Material;
 
-public enum RoomType {
-    GENERIC(Material.GLASS),
-    STAIR_UP(Material.STONE),
-    STAIR_RECEIVE(Material.COBBLESTONE);
+public abstract class RoomType {
+    public Material identifier;
 
-    Material identifier;
-    RoomType(Material identifier) {
-        this.identifier = identifier;
-    }
+    public RoomType(Material identifier) { this.identifier = identifier; }
+
+    public abstract void canSpawn();
 }
