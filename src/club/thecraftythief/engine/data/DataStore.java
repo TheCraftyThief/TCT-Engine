@@ -25,4 +25,8 @@ public class DataStore {
     public static void store(Entity entity, String dataKey, String value) {
         entity.setMetadata(dataKey, new FixedMetadataValue(Engine.getInstance(), value));
     }
+
+    public static void clear(Entity entity, String dataKey) {
+        entity.removeMetadata(dataKey, Engine.getInstance());
+    }
 }

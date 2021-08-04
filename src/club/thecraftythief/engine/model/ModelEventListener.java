@@ -1,6 +1,5 @@
 package club.thecraftythief.engine.model;
 
-import club.thecraftythief.engine.data.DataStore;
 import club.thecraftythief.engine.model.events.ModelInteractEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.ArmorStand;
@@ -18,21 +17,14 @@ public class ModelEventListener implements Listener {
         Entity clicked = e.getRightClicked();
         if(clicked instanceof ArmorStand) {
             ArmorStand stand = (ArmorStand) clicked;
-            String isModel = DataStore.read(stand, ModelMgr.MODEL_TAG);
-            if(isModel != null) {
-                if(isModel.equals("true")) {
-                    String modelName = DataStore.read(stand, "model_name");
-                    if(modelName == null) {
-                        throw new Exception("ArmorStand \""+stand.getUniqueId().toString()+"\" is marked as a model, without model data??");
-                    }
-                    ModelData modelData = ModelMgr.getInstance().getModel(modelName);
-                    if(modelData == null) {
-                        throw new Exception("ArmorStand \""+stand.getUniqueId().toString()+"\" has proper model data, but the model cannot be found? Was it unloaded?");
-                    }
-                    ModelInteractEvent modelEvent = new ModelInteractEvent(modelData, stand, player);
-                    Bukkit.getPluginManager().callEvent(modelEvent);
-                    e.setCancelled(true);
-                }
+            if(ModelMgr.getInstance().isModel(stand)) {
+                String modelName = ModelMgr.getInstance().getModelName(stand);
+
+                ModelData modelData = ModelMgr.getInstance().getModel(modelName);
+
+                ModelInteractEvent modelEvent = new ModelInteractEvent(modelData, stand, player);
+                Bukkit.getPluginManager().callEvent(modelEvent);
+                e.setCancelled(true);
             }
         }
     }

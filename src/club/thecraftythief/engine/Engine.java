@@ -31,6 +31,8 @@ public class Engine extends JavaPlugin {
         getLogger().info("Enabling... TCT-Engine");
         super.onEnable();
 
+        new ModelMgr();
+
         PaperCommandManager manager = new PaperCommandManager(this);
         manager.registerCommand(new ModelsCommand());
         manager.registerCommand(new SpawnCommand());
