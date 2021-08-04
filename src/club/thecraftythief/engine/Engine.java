@@ -1,6 +1,7 @@
 package club.thecraftythief.engine;
 
 import club.thecraftythief.engine.command.ModelsCommand;
+import club.thecraftythief.engine.model.ModelMgr;
 import co.aikar.commands.PaperCommandManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,8 +29,10 @@ public class Engine extends JavaPlugin {
         super.onEnable();
 
         PaperCommandManager manager = new PaperCommandManager(this);
-
         manager.registerCommand(new ModelsCommand());
+
+        new ModelMgr();
+
         getLogger().info("Enabled TCT-Engine");
     }
 }

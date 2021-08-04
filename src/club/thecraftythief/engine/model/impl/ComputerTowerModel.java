@@ -4,8 +4,8 @@ import club.thecraftythief.engine.model.ModYModel;
 import club.thecraftythief.engine.model.ModelData;
 import org.bukkit.util.Vector;
 
-public class GoldBarModel extends ModYModel {
-    public GoldBarModel() {
-        super("gold_bar", 2, -1.38f);
+public class ComputerTowerModel extends ModYModel {
+    public ComputerTowerModel() {
+        super("computer_tower", 1, -1.2f);
     }
 }
