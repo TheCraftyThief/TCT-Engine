@@ -1,4 +1,5 @@
 plugins {
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
     id 'java'
 }
 
@@ -15,15 +16,36 @@ sourceSets {
         java {
             srcDirs = ['src']
         }
+        resources {
+            srcDirs = ['resources']
+        }
     }
 }
 
 repositories {
     maven {
-        url 'https://papermc.io/repo/repository/maven-public/'
+        url = "https://papermc.io/repo/repository/maven-public/"
+    }
+    maven {
+        url = "https://repo.aikar.co/content/groups/aikar/"
+    }
+    maven {
+        url = "https://hub.spigotmc.org/nexus/content/groups/public/"
     }
 }
 
 dependencies {
-    compileOnly 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
+    compileOnly "io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT"
+    compileOnly "org.spigotmc:spigot-api:1.15.2-R0.1-SNAPSHOT"
+    implementation "co.aikar:acf-paper:0.5.0-SNAPSHOT"
+
+    //Jar files to depend on
+    implementation fileTree(include: ['*.jar'], dir: 'third-party')
 }
+
+shadowJar {
+    relocate 'co.aikar.commands', 'club.thecraftythief.engine.acf'
+    relocate 'co.aikar.locales', 'club.thecraftythief.engine.locales'
+}
+
+build.dependsOn shadowJar
