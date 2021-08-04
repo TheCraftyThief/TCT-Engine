@@ -9,5 +9,6 @@ public class StairReceive extends RoomType {
     }
 
     @Override
-    public void canSpawn() {}
+    public void canSpawn() {
+    }
 }
