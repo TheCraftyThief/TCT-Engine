@@ -35,15 +35,14 @@ public class ModelsCommand extends BaseCommand {
             ModelMgr modelMgr = ModelMgr.getInstance();
             ModelData model = modelMgr.getModelByID(i);
             ItemStack iStack;
-            if(model == null) {
-                runner.sendMessage("No model found for ID: "+i);
+            if (model == null) {
+                runner.sendMessage("No model found for ID: " + i);
                 //Code to help model testing on client. TCT won't know its a model, but at least the client can display it.
                 iStack = new ItemStack(Material.STICK);
                 ItemMeta meta = iStack.getItemMeta();
                 meta.setCustomModelData(i);
                 iStack.setItemMeta(meta);
-            }
-            else {
+            } else {
                 //Hooray, the model exists, use its ItemStack instead since it has proper meta!
                 iStack = model.getItemStack();
             }
@@ -70,15 +69,15 @@ public class ModelsCommand extends BaseCommand {
 
         ModelMgr modelMgr = ModelMgr.getInstance();
         ModelData model = modelMgr.getModel(modelName);
-        if(model == null) {
-            runner.sendMessage("Couldn't find model \""+modelName+"\"");
+        if (model == null) {
+            runner.sendMessage("Couldn't find model \"" + modelName + "\"");
             return;
         }
 
         Location targetLoc = runner.getLocation();
         World world = targetLoc.getWorld();
         targetLoc.add(model.getSpawnOffset());
-        ArmorStand stand = (ArmorStand)world.spawnEntity(targetLoc, EntityType.ARMOR_STAND);
+        ArmorStand stand = (ArmorStand) world.spawnEntity(targetLoc, EntityType.ARMOR_STAND);
         stand.setInvisible(true);
         stand.setGravity(false);
         stand.setItem(EquipmentSlot.HEAD, model.getItemStack());
