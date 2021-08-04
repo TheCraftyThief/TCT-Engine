@@ -17,11 +17,6 @@ public class ModelMgr {
     public static final String MODEL_TAG = "model";
 
     private static ModelMgr instance;
-
-    public static ModelMgr getInstance() {
-        return instance;
-    }
-
     private final List<ModelData> models;
 
     public ModelMgr() {
@@ -29,22 +24,27 @@ public class ModelMgr {
         models = new ArrayList<ModelData>();
     }
 
+    public static ModelMgr getInstance() {
+        return instance;
+    }
+
     public void registerModel(ModelData newModel) {
         models.add(newModel);
     }
 
     public ModelData getModel(String modelName) {
-        for(int i = 0; i < models.size(); i++) {
-            if(models.get(i).getModelName().equalsIgnoreCase(modelName)) {
-                return models.get(i);
+        for (ModelData model : models) {
+            if (model.getModelName().equalsIgnoreCase(modelName)) {
+                return model;
             }
         }
         return null;
     }
+
     public ModelData getModelByID(int modelId) {
-        for(int i = 0; i < models.size(); i++) {
-            if(models.get(i).getModelId() == modelId) {
-                return models.get(i);
+        for (ModelData model : models) {
+            if (model.getModelId() == modelId) {
+                return model;
             }
         }
         return null;

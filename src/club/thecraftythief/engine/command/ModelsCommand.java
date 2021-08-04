@@ -35,15 +35,14 @@ public class ModelsCommand extends BaseCommand {
             ModelMgr modelMgr = ModelMgr.getInstance();
             ModelData model = modelMgr.getModelByID(i);
             ItemStack iStack;
-            if(model == null) {
-                runner.sendMessage("No model found for ID: "+i);
+            if (model == null) {
+                runner.sendMessage("No model found for ID: " + i);
                 //Code to help model testing on client. TCT won't know its a model, but at least the client can display it.
                 iStack = new ItemStack(Material.STICK);
                 ItemMeta meta = iStack.getItemMeta();
                 meta.setCustomModelData(i);
                 iStack.setItemMeta(meta);
-            }
-            else {
+            } else {
                 //Hooray, the model exists, use its ItemStack instead since it has proper meta!
                 iStack = model.getItemStack();
             }
@@ -67,7 +66,6 @@ public class ModelsCommand extends BaseCommand {
     @Subcommand("spawn")
     @CommandPermission("tct.engine.model.spawn")
     public void onSpawn(Player runner, String modelName) {
-
         ModelMgr modelMgr = ModelMgr.getInstance();
         try {
             modelMgr.spawnModelByName(modelName, runner.getLocation());
@@ -75,6 +73,5 @@ public class ModelsCommand extends BaseCommand {
         } catch (Exception ex) {
             runner.sendMessage(ex.getMessage());
         }
-
     }
 }

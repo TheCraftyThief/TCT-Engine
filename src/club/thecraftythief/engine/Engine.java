@@ -1,6 +1,7 @@
 package club.thecraftythief.engine;
 
 import club.thecraftythief.engine.command.ModelsCommand;
+import club.thecraftythief.engine.command.SpawnCommand;
 import club.thecraftythief.engine.model.ModelEventListener;
 import club.thecraftythief.engine.model.ModelMgr;
 import co.aikar.commands.PaperCommandManager;
@@ -32,8 +33,7 @@ public class Engine extends JavaPlugin {
 
         PaperCommandManager manager = new PaperCommandManager(this);
         manager.registerCommand(new ModelsCommand());
-
-        new ModelMgr();
+        manager.registerCommand(new SpawnCommand());
 
         Bukkit.getPluginManager().registerEvents(new ModelEventListener(), this);
 
