@@ -82,5 +82,7 @@ public class ModelsCommand extends BaseCommand {
         stand.setInvisible(true);
         stand.setGravity(false);
         stand.setItem(EquipmentSlot.HEAD, model.getItemStack());
+
+        runner.sendMessage("Model spawned!");
     }
 }
