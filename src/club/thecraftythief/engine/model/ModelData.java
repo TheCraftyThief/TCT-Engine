@@ -1,5 +1,6 @@
 package club.thecraftythief.engine.model;
 
+import net.kyori.adventure.text.TextComponent;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -33,7 +34,7 @@ public abstract class ModelData {
         ItemStack stack = new ItemStack(Material.STICK);
         ItemMeta meta = stack.getItemMeta();
         meta.setCustomModelData(modelId);
-        meta.setLocalizedName(itemName);
+        meta.setDisplayName(modelName);
         stack.setItemMeta(meta);
         return stack;
     }

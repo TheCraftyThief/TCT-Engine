@@ -1,9 +1,6 @@
 package club.thecraftythief.engine.model;
 
-import club.thecraftythief.engine.model.impl.ComputerTowerModel;
-import club.thecraftythief.engine.model.impl.GoldBarModel;
-import club.thecraftythief.engine.model.impl.PhoneModel;
-import club.thecraftythief.engine.model.impl.RubiksCubeModel;
+import club.thecraftythief.engine.model.impl.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +23,7 @@ public class ModelMgr {
         registerModel(new GoldBarModel());
         registerModel(new PhoneModel());
         registerModel(new RubiksCubeModel());
+        registerModel(new CashModel());
     }
 
     private void registerModel(ModelData newModel) {
@@ -35,6 +33,14 @@ public class ModelMgr {
     public ModelData getModel(String modelName) {
         for(int i = 0; i < models.size(); i++) {
             if(models.get(i).getModelName().equalsIgnoreCase(modelName)) {
+                return models.get(i);
+            }
+        }
+        return null;
+    }
+    public ModelData getModelByID(int modelId) {
+        for(int i = 0; i < models.size(); i++) {
+            if(models.get(i).getModelId() == modelId) {
                 return models.get(i);
             }
         }
