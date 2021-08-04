@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Engine extends JavaPlugin {
 
     private static Engine instance;
+
     public static Engine getInstance() {
         return instance;
     }

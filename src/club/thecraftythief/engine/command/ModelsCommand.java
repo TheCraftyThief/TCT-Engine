@@ -6,7 +6,6 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
 import com.github.lory24.mcuitils.McGUI;
 import com.github.lory24.mcuitils.api.GUIButtonEvents;
-import com.github.lory24.mcuitils.api.GUICustomItem;
 import com.github.lory24.mcuitils.api.GUItem;
 import com.github.lory24.mcuitils.utils.GuiLines;
 import org.bukkit.Material;
@@ -21,7 +20,7 @@ public class ModelsCommand extends BaseCommand {
         McGUI gui = new McGUI("Models", GuiLines.SIX_LINES, Engine.getInstance());
 
         //9*6 because theres 9 total slots in one line and 6 total lines
-        for(int i = 0; i < 9*6; i++) {
+        for (int i = 0; i < 9 * 6; i++) {
             ItemStack iStack = new ItemStack(Material.STICK);
             ItemMeta meta = iStack.getItemMeta();
             meta.setCustomModelData(i);

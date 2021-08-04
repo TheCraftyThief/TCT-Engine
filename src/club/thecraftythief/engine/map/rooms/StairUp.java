@@ -9,5 +9,6 @@ public class StairUp extends RoomType {
     }
 
     @Override
-    public void canSpawn() {}
+    public void canSpawn() {
+    }
 }
