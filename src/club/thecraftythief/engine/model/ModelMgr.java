@@ -1,7 +1,5 @@
 package club.thecraftythief.engine.model;
 
-import club.thecraftythief.engine.model.impl.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,17 +16,9 @@ public class ModelMgr {
     public ModelMgr() {
         instance = this;
         models = new ArrayList<ModelData>();
-
-        registerModel(new ComputerTowerModel());
-        registerModel(new GoldBarModel());
-        registerModel(new PhoneModel());
-        registerModel(new RubiksCubeModel());
-        registerModel(new CashModel());
-        registerModel(new LaptopModel());
-        registerModel(new TVModel());
     }
 
-    private void registerModel(ModelData newModel) {
+    public void registerModel(ModelData newModel) {
         models.add(newModel);
     }
 
