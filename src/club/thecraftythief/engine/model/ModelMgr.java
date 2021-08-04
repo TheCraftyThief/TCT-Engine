@@ -24,6 +24,8 @@ public class ModelMgr {
         registerModel(new PhoneModel());
         registerModel(new RubiksCubeModel());
         registerModel(new CashModel());
+        registerModel(new LaptopModel());
+        registerModel(new TVModel());
     }
 
     private void registerModel(ModelData newModel) {

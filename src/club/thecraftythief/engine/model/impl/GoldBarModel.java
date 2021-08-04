@@ -6,6 +6,6 @@ import org.bukkit.util.Vector;
 
 public class GoldBarModel extends ModYModel {
     public GoldBarModel() {
-        super("gold_bar", 2, -1.38f);
+        super("gold_bar", 2);
     }
 }

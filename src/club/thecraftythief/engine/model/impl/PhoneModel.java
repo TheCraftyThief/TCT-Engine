@@ -5,6 +5,6 @@ import club.thecraftythief.engine.model.ModelData;
 
 public class PhoneModel extends ModYModel {
     public PhoneModel() {
-        super("phone", 3, -1.38f);
+        super("phone", 3);
     }
 }
