@@ -1,8 +1,10 @@
 package club.thecraftythief.engine;
 
 import club.thecraftythief.engine.command.ModelsCommand;
+import club.thecraftythief.engine.model.ModelEventListener;
 import club.thecraftythief.engine.model.ModelMgr;
 import co.aikar.commands.PaperCommandManager;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Engine extends JavaPlugin {
@@ -33,6 +35,12 @@ public class Engine extends JavaPlugin {
 
         new ModelMgr();
 
+        Bukkit.getPluginManager().registerEvents(new ModelEventListener(), this);
+
         getLogger().info("Enabled TCT-Engine");
+    }
+
+    public ModelMgr getModelManager() {
+        return ModelMgr.getInstance();
     }
 }

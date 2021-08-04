@@ -69,20 +69,12 @@ public class ModelsCommand extends BaseCommand {
     public void onSpawn(Player runner, String modelName) {
 
         ModelMgr modelMgr = ModelMgr.getInstance();
-        ModelData model = modelMgr.getModel(modelName);
-        if(model == null) {
-            runner.sendMessage("Couldn't find model \""+modelName+"\"");
-            return;
+        try {
+            modelMgr.spawnModelByName(modelName, runner.getLocation());
+            runner.sendMessage("Model spawned!");
+        } catch (Exception ex) {
+            runner.sendMessage(ex.getMessage());
         }
 
-        Location targetLoc = runner.getLocation();
-        World world = targetLoc.getWorld();
-        targetLoc.add(model.getSpawnOffset());
-        ArmorStand stand = (ArmorStand)world.spawnEntity(targetLoc, EntityType.ARMOR_STAND);
-        stand.setInvisible(true);
-        stand.setGravity(false);
-        stand.setItem(EquipmentSlot.HEAD, model.getItemStack());
-
-        runner.sendMessage("Model spawned!");
     }
 }
