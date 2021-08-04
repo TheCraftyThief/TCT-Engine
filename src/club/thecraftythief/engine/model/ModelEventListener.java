@@ -15,9 +15,9 @@ public class ModelEventListener implements Listener {
     public void onEntityClick(PlayerInteractAtEntityEvent e) throws Exception {
         Player player = e.getPlayer();
         Entity clicked = e.getRightClicked();
-        if(clicked instanceof ArmorStand) {
+        if (clicked instanceof ArmorStand) {
             ArmorStand stand = (ArmorStand) clicked;
-            if(ModelMgr.getInstance().isModel(stand)) {
+            if (ModelMgr.getInstance().isModel(stand)) {
                 String modelName = ModelMgr.getInstance().getModelName(stand);
 
                 ModelData modelData = ModelMgr.getInstance().getModel(modelName);

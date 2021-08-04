@@ -9,14 +9,13 @@ import java.util.List;
 
 public class DataStore {
     public static String read(Entity entity, String dataKey) {
-        if(entity.hasMetadata(dataKey)) {
+        if (entity.hasMetadata(dataKey)) {
             List<MetadataValue> metadatas = entity.getMetadata(dataKey);
-            for(MetadataValue value : metadatas) {
+            for (MetadataValue value : metadatas) {
                 String data = value.asString();
                 return data;
             }
-        }
-        else {
+        } else {
             return null;
         }
         return null;

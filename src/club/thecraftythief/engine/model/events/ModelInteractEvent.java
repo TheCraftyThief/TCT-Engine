@@ -11,11 +11,10 @@ import org.jetbrains.annotations.NotNull;
 public class ModelInteractEvent extends Event implements Cancellable {
 
     private static HandlerList handlers = new HandlerList();
-    private boolean cancel;
-
     private final ModelData model;
     private final ArmorStand entity;
     private final Player player;
+    private boolean cancel;
 
     public ModelInteractEvent(ModelData model, ArmorStand entity, Player player) {
         this.model = model;
@@ -23,12 +22,18 @@ public class ModelInteractEvent extends Event implements Cancellable {
         this.player = player;
     }
 
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
+
     public ModelData getModel() {
         return model;
     }
+
     public ArmorStand getEntity() {
         return entity;
     }
+
     public Player getPlayer() {
         return player;
     }
@@ -37,15 +42,14 @@ public class ModelInteractEvent extends Event implements Cancellable {
     public boolean isCancelled() {
         return cancel;
     }
+
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
+
     @Override
     public @NotNull HandlerList getHandlers() {
-        return handlers;
-    }
-    public static HandlerList getHandlerList() {
         return handlers;
     }
 }
