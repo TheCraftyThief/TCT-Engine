@@ -22,6 +22,11 @@ public class Engine extends JavaPlugin {
         return roomMgr;
     }
 
+    private static ModelMgr modelMgr;
+    public static ModelMgr getModelMgr() {
+        return modelMgr;
+    }
+
     @Override
     public void onLoad() {
 
@@ -37,7 +42,7 @@ public class Engine extends JavaPlugin {
         getLogger().info("Enabling... TCT-Engine");
         super.onEnable();
 
-        new ModelMgr();
+        modelMgr = new ModelMgr();
         roomMgr = new RoomMgr();
 
         PaperCommandManager manager = new PaperCommandManager(this);
