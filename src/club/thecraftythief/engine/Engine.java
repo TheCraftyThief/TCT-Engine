@@ -1,7 +1,9 @@
 package club.thecraftythief.engine;
 
+import club.thecraftythief.engine.command.EditorCommand;
 import club.thecraftythief.engine.command.ModelsCommand;
 import club.thecraftythief.engine.command.SpawnCommand;
+import club.thecraftythief.engine.map.RoomMgr;
 import club.thecraftythief.engine.model.ModelEventListener;
 import club.thecraftythief.engine.model.ModelMgr;
 import co.aikar.commands.PaperCommandManager;
@@ -11,9 +13,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Engine extends JavaPlugin {
 
     private static Engine instance;
-
     public static Engine getInstance() {
         return instance;
+    }
+
+    private static RoomMgr roomMgr;
+    public static RoomMgr getRoomMgr() {
+        return roomMgr;
     }
 
     @Override
@@ -32,10 +38,12 @@ public class Engine extends JavaPlugin {
         super.onEnable();
 
         new ModelMgr();
+        roomMgr = new RoomMgr();
 
         PaperCommandManager manager = new PaperCommandManager(this);
         manager.registerCommand(new ModelsCommand());
         manager.registerCommand(new SpawnCommand());
+        manager.registerCommand(new EditorCommand());
 
         Bukkit.getPluginManager().registerEvents(new ModelEventListener(), this);
 

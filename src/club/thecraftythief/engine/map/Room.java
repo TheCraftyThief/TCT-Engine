@@ -3,20 +3,25 @@ package club.thecraftythief.engine.map;
 import org.bukkit.Location;
 
 public class Room {
+    private IRoomType roomType;
+    private Location origin;
 
-    RoomType type;
-    private Location roomLoc;
+    //No access modifier so its constructor is only accessible in this package
+    Room(IRoomType roomType, Location origin) {
+        this.roomType = roomType;
+        this.origin = origin;
 
-    public Room(RoomType type, Location roomLoc) {
-        this.type = type;
-        this.roomLoc = roomLoc;
+
     }
 
-    public Location getLocation() {
-        return this.roomLoc;
+    public IRoomType getRoomType() {
+        return roomType;
+    }
+    public Location getOrigin() {
+        return origin;
     }
 
-    public RoomType getType() {
-        return this.type;
+    public void cloneTo(Location target) {
+
     }
 }
