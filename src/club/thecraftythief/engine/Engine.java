@@ -6,6 +6,7 @@ import club.thecraftythief.engine.command.SpawnCommand;
 import club.thecraftythief.engine.map.RoomMgr;
 import club.thecraftythief.engine.model.ModelEventListener;
 import club.thecraftythief.engine.model.ModelMgr;
+import club.thecraftythief.engine.party.PartyMgr;
 import co.aikar.commands.PaperCommandManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,11 +21,6 @@ public class Engine extends JavaPlugin {
     private static RoomMgr roomMgr;
     public static RoomMgr getRoomMgr() {
         return roomMgr;
-    }
-
-    private static ModelMgr modelMgr;
-    public static ModelMgr getModelMgr() {
-        return modelMgr;
     }
 
     @Override
@@ -42,7 +38,8 @@ public class Engine extends JavaPlugin {
         getLogger().info("Enabling... TCT-Engine");
         super.onEnable();
 
-        modelMgr = new ModelMgr();
+        new ModelMgr();
+        new PartyMgr();
         roomMgr = new RoomMgr();
 
         PaperCommandManager manager = new PaperCommandManager(this);
@@ -57,5 +54,9 @@ public class Engine extends JavaPlugin {
 
     public ModelMgr getModelManager() {
         return ModelMgr.getInstance();
+    }
+
+    public PartyMgr getPartyManager() {
+        return PartyMgr.getInstance();
     }
 }
