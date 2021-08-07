@@ -368,946 +368,944 @@ public class Model implements ArmorStand {
     //TODO: PVP PLEASE FINISH IMPLEMENTINg THIS!!! <33 -ASM
     @Override
     public void setMaximumAir(int ticks) {
-
+        model.setMaximumAir(ticks);
     }
 
     @Override
     public int getArrowCooldown() {
-        return 0;
+        return model.getArrowCooldown();
     }
 
     @Override
     public void setArrowCooldown(int ticks) {
-
+        model.setArrowCooldown(ticks);
     }
 
     @Override
     public int getArrowsInBody() {
-        return 0;
+        return model.getArrowsInBody();
     }
 
     @Override
     public void setArrowsInBody(int count) {
-
+        model.setArrowsInBody(count);
     }
 
     @Override
     public int getBeeStingerCooldown() {
-        return 0;
+         return model.getBeeStingerCooldown();
     }
 
     @Override
     public void setBeeStingerCooldown(int ticks) {
-
+        model.setBeeStingerCooldown(ticks);
     }
 
     @Override
     public int getBeeStingersInBody() {
-        return 0;
+        return model.getBeeStingersInBody();
     }
 
     @Override
     public void setBeeStingersInBody(int count) {
-
+        model.setBeeStingersInBody(count);
     }
 
     @Override
-    public int getMaximumNoDamageTicks() {
-        return 0;
+    public int getMaximumNoDamageTicks() {return model.getMaximumNoDamageTicks();
     }
 
     @Override
     public void setMaximumNoDamageTicks(int ticks) {
-
+        model.setMaximumNoDamageTicks(ticks);
     }
 
     @Override
     public double getLastDamage() {
-        return 0;
+        return model.getLastDamage();
     }
 
     @Override
     public void setLastDamage(double damage) {
-
+        model.setLastDamage(damage);
     }
 
     @Override
     public int getNoDamageTicks() {
-        return 0;
+        return model.getNoDamageTicks();
     }
 
     @Override
     public void setNoDamageTicks(int ticks) {
-
+        model.setNoDamageTicks(ticks);
     }
 
     @Override
     public @Nullable Player getKiller() {
-        return null;
+        return model.getKiller();
     }
 
     @Override
     public void setKiller(@Nullable Player killer) {
-
+        model.setKiller(killer);
     }
 
     @Override
     public boolean addPotionEffect(@NotNull PotionEffect effect) {
-        return false;
+        return model.addPotionEffect(effect);
     }
 
     @Override
     public boolean addPotionEffect(@NotNull PotionEffect effect, boolean force) {
-        return false;
+        return model.addPotionEffect(effect, force);
     }
 
     @Override
     public boolean addPotionEffects(@NotNull Collection<PotionEffect> effects) {
-        return false;
+        return model.addPotionEffects(effects);
     }
 
     @Override
     public boolean hasPotionEffect(@NotNull PotionEffectType type) {
-        return false;
+        return model.hasPotionEffect(type);
     }
 
     @Override
     public @Nullable PotionEffect getPotionEffect(@NotNull PotionEffectType type) {
-        return null;
+        return model.getPotionEffect(type);
     }
 
     @Override
     public void removePotionEffect(@NotNull PotionEffectType type) {
-
+        model.removePotionEffect(type);
     }
 
     @Override
     public @NotNull Collection<PotionEffect> getActivePotionEffects() {
-        return null;
+        return model.getActivePotionEffects();
     }
 
     @Override
     public boolean hasLineOfSight(@NotNull Entity other) {
-        return false;
+        return model.hasLineOfSight(other);
     }
 
     @Override
     public boolean hasLineOfSight(@NotNull Location location) {
-        return false;
+        return model.hasLineOfSight(location);
     }
 
     @Override
     public boolean getRemoveWhenFarAway() {
-        return false;
+        return model.getRemoveWhenFarAway();
     }
 
     @Override
     public void setRemoveWhenFarAway(boolean remove) {
-
+        model.setRemoveWhenFarAway(remove);
     }
 
     @Override
     public @Nullable EntityEquipment getEquipment() {
-        return null;
+        return model.getEquipment();
     }
 
     @Override
     public void setCanPickupItems(boolean pickup) {
-
+        model.setCanPickupItems(pickup);
     }
 
     @Override
     public boolean getCanPickupItems() {
-        return false;
+        return model.getCanPickupItems();
     }
 
     @Override
     public boolean isLeashed() {
-        return false;
+        return model.isLeashed();
     }
 
     @Override
     public @NotNull Entity getLeashHolder() throws IllegalStateException {
-        return null;
+        return model.getLeashHolder();
     }
 
     @Override
     public boolean setLeashHolder(@Nullable Entity holder) {
-        return false;
+        return model.setLeashHolder(holder);
     }
 
     @Override
     public boolean isGliding() {
-        return false;
+        return model.isGliding();
     }
 
     @Override
     public void setGliding(boolean gliding) {
-
+        model.setGliding(gliding);
     }
 
     @Override
     public boolean isSwimming() {
-        return false;
+        return model.isSwimming();
     }
 
     @Override
     public void setSwimming(boolean swimming) {
-
+        model.setSwimming(swimming);
     }
 
     @Override
     public boolean isRiptiding() {
-        return false;
+        return model.isRiptiding();
     }
 
     @Override
     public boolean isSleeping() {
-        return false;
+        return model.isSleeping();
     }
 
     @Override
     public boolean isClimbing() {
-        return false;
+        return model.isClimbing();
     }
 
     @Override
     public void setAI(boolean ai) {
-
+        model.setAI(ai);
     }
 
     @Override
     public boolean hasAI() {
-        return false;
+        return model.hasAI();
     }
 
     @Override
     public void attack(@NotNull Entity target) {
-
+        model.attack(target);
     }
 
     @Override
     public void swingMainHand() {
-
+        model.swingMainHand();
     }
 
     @Override
     public void swingOffHand() {
-
+        swingOffHand();
     }
 
     @Override
     public void setCollidable(boolean collidable) {
-
+        model.setCollidable(collidable);
     }
 
     @Override
     public boolean isCollidable() {
-        return false;
+        return model.isCollidable();
     }
 
     @Override
     public @NotNull Set<UUID> getCollidableExemptions() {
-        return null;
+        return model.getCollidableExemptions();
     }
 
     @Override
     public <T> @Nullable T getMemory(@NotNull MemoryKey<T> memoryKey) {
-        return null;
+        return model.getMemory(memoryKey);
     }
 
     @Override
     public <T> void setMemory(@NotNull MemoryKey<T> memoryKey, @Nullable T memoryValue) {
-
+        model.setMemory(memoryKey, memoryValue);
     }
 
     @Override
     public @NotNull EntityCategory getCategory() {
-        return null;
+        return model.getCategory();
     }
 
     @Override
     public void setInvisible(boolean invisible) {
-
+        model.setInvisible(invisible);
     }
 
     @Override
     public boolean isInvisible() {
-        return false;
+        return model.isInvisible();
     }
 
     @Override
     public int getArrowsStuck() {
-        return 0;
+        return model.getArrowsStuck();
     }
 
     @Override
     public void setArrowsStuck(int arrows) {
-
+        model.setArrowsStuck(arrows);
     }
 
     @Override
     public int getShieldBlockingDelay() {
-        return 0;
+        return model.getShieldBlockingDelay();
     }
 
     @Override
     public void setShieldBlockingDelay(int delay) {
-
+        model.setShieldBlockingDelay(delay);
     }
 
     @Override
     public @Nullable ItemStack getActiveItem() {
-        return null;
+        return model.getActiveItem();
     }
 
     @Override
     public void clearActiveItem() {
-
+        model.clearActiveItem();
     }
 
     @Override
     public int getItemUseRemainingTime() {
-        return 0;
+        return model.getItemUseRemainingTime();
     }
 
     @Override
     public int getHandRaisedTime() {
-        return 0;
+        return model.getHandRaisedTime();
     }
 
     @Override
     public boolean isHandRaised() {
-        return false;
+        return model.isHandRaised();
     }
 
     @Override
     public @NotNull EquipmentSlot getHandRaised() {
-        return null;
+        return model.getHandRaised();
     }
 
     @Override
     public boolean isJumping() {
-        return false;
+        return model.isJumping();
     }
 
     @Override
     public void setJumping(boolean jumping) {
-
+        model.setJumping(jumping);
     }
 
     @Override
     public void playPickupItemAnimation(@NotNull Item item, int quantity) {
-
+        model.playPickupItemAnimation(item, quantity);
     }
 
     @Override
     public float getHurtDirection() {
-        return 0;
+        return model.getHurtDirection();
     }
 
     @Override
     public void setHurtDirection(float hurtDirection) {
-
+        model.setHurtDirection(hurtDirection);
     }
 
     @Override
     public @Nullable AttributeInstance getAttribute(@NotNull Attribute attribute) {
-        return null;
+        return model.getAttribute(attribute);
     }
 
     @Override
     public void registerAttribute(@NotNull Attribute attribute) {
-
+        model.registerAttribute(attribute);
     }
 
     @Override
     public void damage(double amount) {
-
+        model.damage(amount);
     }
 
     @Override
     public void damage(double amount, @Nullable Entity source) {
-
+        model.damage(amount, source);
     }
 
     @Override
-    public double getHealth() {
-        return 0;
+    public double getHealth() {return model.getHealth();
     }
 
     @Override
     public void setHealth(double health) {
-
+        model.setHealth(health);
     }
 
     @Override
     public double getAbsorptionAmount() {
-        return 0;
+        return model.getAbsorptionAmount();
     }
 
     @Override
     public void setAbsorptionAmount(double amount) {
-
+        model.setAbsorptionAmount(amount);
     }
 
     @Override
     public double getMaxHealth() {
-        return 0;
+        return model.getMaxHealth();
     }
 
     @Override
     public void setMaxHealth(double health) {
-
+        model.setMaxHealth(health);
     }
 
     @Override
     public void resetMaxHealth() {
-
+        model.resetMaxHealth();
     }
 
     @Override
     public @NotNull Location getLocation() {
-        return null;
+        return model.getLocation();
     }
 
     @Override
     public @Nullable Location getLocation(@Nullable Location loc) {
-        return null;
+        return model.getLocation(loc);
     }
 
     @Override
     public void setVelocity(@NotNull Vector velocity) {
-
+        model.setVelocity(velocity);
     }
 
     @Override
     public @NotNull Vector getVelocity() {
-        return null;
+        return model.getVelocity();
     }
 
     @Override
     public double getHeight() {
-        return 0;
+        return model.getHeight();
     }
 
     @Override
     public double getWidth() {
-        return 0;
+        return model.getWidth();
     }
 
     @Override
     public @NotNull BoundingBox getBoundingBox() {
-        return null;
+        return model.getBoundingBox();
     }
 
     @Override
     public boolean isOnGround() {
-        return false;
+        return model.isOnGround();
     }
 
     @Override
     public boolean isInWater() {
-        return false;
+        return model.isInWater();
     }
 
     @Override
     public @NotNull World getWorld() {
-        return null;
+        return model.getWorld();
     }
 
     @Override
     public void setRotation(float yaw, float pitch) {
-
+        model.setRotation(yaw, pitch);
     }
 
     @Override
     public boolean teleport(@NotNull Location location) {
-        return false;
+        return model.teleport(location);
     }
 
     @Override
     public boolean teleport(@NotNull Location location, PlayerTeleportEvent.@NotNull TeleportCause cause) {
-        return false;
+        return model.teleport(location, cause);
     }
 
     @Override
     public boolean teleport(@NotNull Entity destination) {
-        return false;
+        return model.teleport(destination);
     }
 
     @Override
     public boolean teleport(@NotNull Entity destination, PlayerTeleportEvent.@NotNull TeleportCause cause) {
-        return false;
+        return model.teleport(destination, cause);
     }
 
     @Override
     public @NotNull List<Entity> getNearbyEntities(double x, double y, double z) {
-        return null;
+        return model.getNearbyEntities(x, y, z);
     }
 
     @Override
     public int getEntityId() {
-        return 0;
+        return model.getEntityId();
     }
 
     @Override
     public int getFireTicks() {
-        return 0;
+        return model.getFireTicks();
     }
 
     @Override
     public int getMaxFireTicks() {
-        return 0;
+        return model.getMaxFireTicks();
     }
 
     @Override
     public void setFireTicks(int ticks) {
-
+        model.setFireTicks(ticks);
     }
 
     @Override
     public void setVisualFire(boolean fire) {
-
+        model.setVisualFire(fire);
     }
 
     @Override
     public boolean isVisualFire() {
-        return false;
+        return model.isVisualFire();
     }
 
     @Override
     public int getFreezeTicks() {
-        return 0;
+        return model.getFreezeTicks();
     }
 
     @Override
     public int getMaxFreezeTicks() {
-        return 0;
+        return model.getMaxFreezeTicks();
     }
 
     @Override
     public void setFreezeTicks(int ticks) {
-
+        model.setFreezeTicks(ticks);
     }
 
     @Override
     public boolean isFrozen() {
-        return false;
+        return model.isFrozen();
     }
 
     @Override
     public void remove() {
-
+        model.remove();
     }
 
     @Override
     public boolean isDead() {
-        return false;
+        return model.isDead();
     }
 
     @Override
     public boolean isValid() {
-        return false;
+        return model.isValid();
     }
 
     @Override
     public void sendMessage(@NotNull String message) {
-
+        model.sendMessage(message);
     }
 
     @Override
     public void sendMessage(@NotNull String... messages) {
-
+        model.sendMessage(messages);
     }
 
     @Override
     public void sendMessage(@Nullable UUID sender, @NotNull String message) {
-
+        model.sendMessage(sender, message);
     }
 
     @Override
     public void sendMessage(@Nullable UUID sender, @NotNull String... messages) {
-
+        model.sendMessage(sender, messages);
     }
 
     @Override
     public @NotNull Server getServer() {
-        return null;
+        return model.getServer();
     }
 
     @Override
     public @NotNull String getName() {
-        return null;
+        return model.getName();
     }
 
     @Override
     public boolean isPersistent() {
-        return false;
+        return model.isPersistent();
     }
 
     @Override
     public void setPersistent(boolean persistent) {
-
+        model.setPersistent(persistent);
     }
 
     @Override
     public @Nullable Entity getPassenger() {
-        return null;
+        return model.getPassenger();
     }
 
     @Override
     public boolean setPassenger(@NotNull Entity passenger) {
-        return false;
+        return model.setPassenger(passenger);
     }
 
     @Override
     public @NotNull List<Entity> getPassengers() {
-        return null;
+        return model.getPassengers();
     }
 
     @Override
     public boolean addPassenger(@NotNull Entity passenger) {
-        return false;
+        return model.addPassenger(passenger);
     }
 
     @Override
     public boolean removePassenger(@NotNull Entity passenger) {
-        return false;
+        return model.removePassenger(passenger);
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return model.isEmpty();
     }
 
     @Override
     public boolean eject() {
-        return false;
+        return model.eject();
     }
 
     @Override
     public float getFallDistance() {
-        return 0;
+        return model.getFallDistance();
     }
 
     @Override
     public void setFallDistance(float distance) {
-
+        model.setFallDistance(distance);
     }
 
     @Override
     public void setLastDamageCause(@Nullable EntityDamageEvent event) {
-
+        model.setLastDamageCause(event);
     }
 
     @Override
     public @Nullable EntityDamageEvent getLastDamageCause() {
-        return null;
+        return model.getLastDamageCause();
     }
 
     @Override
     public @NotNull UUID getUniqueId() {
-        return null;
+        return model.getUniqueId();
     }
 
     @Override
     public int getTicksLived() {
-        return 0;
+        return model.getTicksLived();
     }
 
     @Override
     public void setTicksLived(int value) {
-
+        model.setTicksLived(value);
     }
 
     @Override
     public void playEffect(@NotNull EntityEffect type) {
-
+        model.playEffect(type);
     }
 
     @Override
     public @NotNull EntityType getType() {
-        return null;
+        return model.getType();
     }
 
     @Override
     public boolean isInsideVehicle() {
-        return false;
+        return model.isInsideVehicle();
     }
 
     @Override
     public boolean leaveVehicle() {
-        return false;
+        return model.leaveVehicle();
     }
 
     @Override
     public @Nullable Entity getVehicle() {
-        return null;
+        return model.getVehicle();
     }
 
     @Override
     public void setCustomNameVisible(boolean flag) {
-
+        model.setCustomNameVisible(flag);
     }
 
     @Override
     public boolean isCustomNameVisible() {
-        return false;
+        return model.isCustomNameVisible();
     }
 
     @Override
     public void setGlowing(boolean flag) {
-
+        model.setGlowing(flag);
     }
 
     @Override
     public boolean isGlowing() {
-        return false;
+        return model.isGlowing();
     }
 
     @Override
     public void setInvulnerable(boolean flag) {
-
+        model.setInvulnerable(flag);
     }
 
     @Override
     public boolean isInvulnerable() {
-        return false;
+        return model.isInvulnerable();
     }
 
     @Override
     public boolean isSilent() {
-        return false;
+        return model.isSilent();
     }
 
     @Override
     public void setSilent(boolean flag) {
-
+        model.setSilent(flag);
     }
 
     @Override
     public boolean hasGravity() {
-        return false;
+        return model.hasGravity();
     }
 
     @Override
     public void setGravity(boolean gravity) {
-
+        model.setGravity(gravity);
     }
 
     @Override
     public int getPortalCooldown() {
-        return 0;
+        return model.getPortalCooldown();
     }
 
     @Override
     public void setPortalCooldown(int cooldown) {
-
+        model.setPortalCooldown(cooldown);
     }
 
     @Override
     public @NotNull Set<String> getScoreboardTags() {
-        return null;
+        return model.getScoreboardTags();
     }
 
     @Override
     public boolean addScoreboardTag(@NotNull String tag) {
-        return false;
+        return model.addScoreboardTag(tag);
     }
 
     @Override
     public boolean removeScoreboardTag(@NotNull String tag) {
-        return false;
+        return model.removeScoreboardTag(tag);
     }
 
     @Override
     public @NotNull PistonMoveReaction getPistonMoveReaction() {
-        return null;
+        return model.getPistonMoveReaction();
     }
 
     @Override
     public @NotNull BlockFace getFacing() {
-        return null;
+        return model.getFacing();
     }
 
     @Override
     public @NotNull Pose getPose() {
-        return null;
+        return model.getPose();
     }
 
     @Override
     public @NotNull Spigot spigot() {
-        return null;
+        return model.spigot();
     }
 
     @Override
     public @Nullable Location getOrigin() {
-        return null;
+        return model.getOrigin();
     }
 
     @Override
     public boolean fromMobSpawner() {
-        return false;
+        return model.fromMobSpawner();
     }
 
     @Override
     public CreatureSpawnEvent.@NotNull SpawnReason getEntitySpawnReason() {
-        return null;
+        return model.getEntitySpawnReason();
     }
 
     @Override
     public boolean isInRain() {
-        return false;
+        return model.isInRain();
     }
 
     @Override
     public boolean isInBubbleColumn() {
-        return false;
+        return model.isInBubbleColumn();
     }
 
     @Override
     public boolean isInWaterOrRain() {
-        return false;
+        return model.isInWaterOrRain();
     }
 
     @Override
     public boolean isInWaterOrBubbleColumn() {
-        return false;
+        return model.isInWaterOrBubbleColumn();
     }
 
     @Override
     public boolean isInWaterOrRainOrBubbleColumn() {
-        return false;
+        return model.isInWaterOrRainOrBubbleColumn();
     }
 
     @Override
     public boolean isInLava() {
-        return false;
+        return model.isInLava();
     }
 
     @Override
     public boolean isTicking() {
-        return false;
+        return model.isTicking();
     }
 
     @Override
     public @Nullable Component customName() {
-        return null;
+        return model.customName();
     }
 
     @Override
     public void customName(@Nullable Component customName) {
-
+        model.customName(customName);
     }
 
     @Override
     public @Nullable String getCustomName() {
-        return null;
+        return model.getCustomName();
     }
 
     @Override
     public void setCustomName(@Nullable String name) {
-
+        model.setCustomName(name);
     }
 
     @Override
     public void setMetadata(@NotNull String metadataKey, @NotNull MetadataValue newMetadataValue) {
-
+        model.setMetadata(metadataKey, newMetadataValue);
     }
 
     @Override
     public @NotNull List<MetadataValue> getMetadata(@NotNull String metadataKey) {
-        return null;
+        return model.getMetadata(metadataKey);
     }
 
     @Override
     public boolean hasMetadata(@NotNull String metadataKey) {
-        return false;
+        return model.hasMetadata(metadataKey);
     }
 
     @Override
     public void removeMetadata(@NotNull String metadataKey, @NotNull Plugin owningPlugin) {
-
+        model.removeMetadata(metadataKey, owningPlugin);
     }
 
     @Override
     public boolean isPermissionSet(@NotNull String name) {
-        return false;
+        return model.isPermissionSet(name);
     }
 
     @Override
     public boolean isPermissionSet(@NotNull Permission perm) {
-        return false;
+        return model.isPermissionSet(perm);
     }
 
     @Override
     public boolean hasPermission(@NotNull String name) {
-        return false;
+        return model.hasPermission(name);
     }
 
     @Override
     public boolean hasPermission(@NotNull Permission perm) {
-        return false;
+        return model.hasPermission(perm);
     }
 
     @Override
     public @NotNull PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value) {
-        return null;
+        return model.addAttachment(plugin, name, value);
     }
 
     @Override
     public @NotNull PermissionAttachment addAttachment(@NotNull Plugin plugin) {
-        return null;
+        return model.addAttachment(plugin);
     }
 
     @Override
     public @Nullable PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value, int ticks) {
-        return null;
+        return model.addAttachment(plugin, name, value, ticks);
     }
 
     @Override
     public @Nullable PermissionAttachment addAttachment(@NotNull Plugin plugin, int ticks) {
-        return null;
+        return model.addAttachment(plugin, ticks);
     }
 
     @Override
     public void removeAttachment(@NotNull PermissionAttachment attachment) {
-
+        model.removeAttachment(attachment);
     }
 
     @Override
     public void recalculatePermissions() {
-
+        model.recalculatePermissions();
     }
 
     @Override
     public @NotNull Set<PermissionAttachmentInfo> getEffectivePermissions() {
-        return null;
+        return model.getEffectivePermissions();
     }
 
     @Override
     public boolean isOp() {
-        return false;
+        return model.isOp();
     }
 
     @Override
     public void setOp(boolean value) {
-
+        model.setOp(value);
     }
 
     @Override
     public @NotNull PersistentDataContainer getPersistentDataContainer() {
-        return null;
+        return model.getPersistentDataContainer();
     }
 
     @Override
     public <T extends Projectile> @NotNull T launchProjectile(@NotNull Class<? extends T> projectile) {
-        return null;
+        return model.launchProjectile(projectile);
     }
 
     @Override
     public <T extends Projectile> @NotNull T launchProjectile(@NotNull Class<? extends T> projectile, @Nullable Vector velocity) {
-        return null;
+        return model.launchProjectile(projectile, velocity);
     }
 }
