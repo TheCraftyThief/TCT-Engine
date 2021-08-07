@@ -15,8 +15,6 @@ public class DataStore {
                 String data = value.asString();
                 return data;
             }
-        } else {
-            return null;
         }
         return null;
     }
