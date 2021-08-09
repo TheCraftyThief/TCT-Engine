@@ -2,6 +2,7 @@ package club.thecraftythief.engine;
 
 import club.thecraftythief.engine.command.EditorCommand;
 import club.thecraftythief.engine.command.ModelsCommand;
+import club.thecraftythief.engine.command.PartyCommand;
 import club.thecraftythief.engine.command.SpawnCommand;
 import club.thecraftythief.engine.map.RoomMgr;
 import club.thecraftythief.engine.model.ModelEventListener;
@@ -46,6 +47,7 @@ public class Engine extends JavaPlugin {
         manager.registerCommand(new ModelsCommand());
         manager.registerCommand(new SpawnCommand());
         manager.registerCommand(new EditorCommand());
+        manager.registerCommand(new PartyCommand());
 
         Bukkit.getPluginManager().registerEvents(new ModelEventListener(), this);
 
