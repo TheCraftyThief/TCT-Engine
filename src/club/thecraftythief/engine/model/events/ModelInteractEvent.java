@@ -1,24 +1,30 @@
 package club.thecraftythief.engine.model.events;
 
-import club.thecraftythief.engine.model.ModelData;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
+import club.thecraftythief.engine.model.ModelData;
+import club.thecraftythief.engine.entity.Model;
+import club.thecraftythief.engine.player.PlayerWrapper;
 
 public class ModelInteractEvent extends Event implements Cancellable {
 
     private static HandlerList handlers = new HandlerList();
-    private final ModelData model;
-    private final ArmorStand entity;
-    private final Player player;
+    private final ModelData modelData;
+    private final Model modelEntity;
+    private final PlayerWrapper player;
     private boolean cancel;
 
-    public ModelInteractEvent(ModelData model, ArmorStand entity, Player player) {
-        this.model = model;
-        this.entity = entity;
+
+    public ModelInteractEvent(ModelData modelData, ArmorStand modelEntity, Player player) {
+        this(modelData, new Model(modelEntity), new PlayerWrapper(player));
+    }
+    public ModelInteractEvent(ModelData modelData, Model modelEntity, PlayerWrapper player) {
+        this.modelData = modelData;
+        this.modelEntity = modelEntity;
         this.player = player;
     }
 
@@ -27,11 +33,11 @@ public class ModelInteractEvent extends Event implements Cancellable {
     }
 
     public ModelData getModel() {
-        return model;
+        return modelData;
     }
 
     public ArmorStand getEntity() {
-        return entity;
+        return modelEntity;
     }
 
     public Player getPlayer() {
