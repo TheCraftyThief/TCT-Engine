@@ -9,6 +9,7 @@ public abstract class ModelData {
     String modelName;
     int modelId;
 
+    // TODO: Do javadocs for all methods like done in PartyMgr
     public ModelData(String modelName, int modelId) {
         this.modelName = modelName;
         this.modelId = modelId;

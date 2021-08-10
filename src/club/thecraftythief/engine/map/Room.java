@@ -6,6 +6,7 @@ public class Room {
     private IRoomType roomType;
     private Location origin;
 
+    // TODO: Do javadocs for all methods like done in PartyMgr
     //No access modifier so its constructor is only accessible in this package
     Room(IRoomType roomType, Location origin) {
         this.roomType = roomType;
