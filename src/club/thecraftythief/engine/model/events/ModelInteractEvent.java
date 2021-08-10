@@ -36,11 +36,11 @@ public class ModelInteractEvent extends Event implements Cancellable {
         return modelData;
     }
 
-    public ArmorStand getEntity() {
+    public Model getEntity() {
         return modelEntity;
     }
 
-    public Player getPlayer() {
+    public PlayerWrapper getPlayer() {
         return player;
     }
 

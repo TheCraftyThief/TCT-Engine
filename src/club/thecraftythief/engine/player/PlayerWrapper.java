@@ -1,5 +1,8 @@
 package club.thecraftythief.engine.player;
 
+import club.thecraftythief.engine.data.DataStore;
+import club.thecraftythief.engine.entity.Model;
+import club.thecraftythief.engine.model.ModelMgr;
 import com.destroystokyo.paper.ClientOption;
 import com.destroystokyo.paper.Title;
 import com.destroystokyo.paper.block.TargetBlockInfo;
@@ -48,12 +51,38 @@ import java.net.InetSocketAddress;
 import java.util.*;
 
 public class PlayerWrapper implements Player {
-    private final Player player;
 
+    /* Custom methods and data */
+
+    public Model getCarrying() {
+        List<Model> modelStands = ModelMgr.getInstance().getSpawnedModels(player.getWorld());
+        ArmorStand carryingStand = null;
+        //Using this to iterate to avoid making copies
+        for (int i = 0; i < modelStands.size(); i++) {
+            ArmorStand current = modelStands.get(i);
+            String uuidStr = DataStore.read(current, Model.BEING_CARRIED_KEY);
+            if (uuidStr == null) {
+                continue;
+            }
+            UUID carrierUUID = UUID.fromString(uuidStr);
+            if (carrierUUID.equals(player.getUniqueId())) {
+                //Dont change rotation
+                return new Model(current);
+            }
+        }
+        return null;
+    }
+
+    /* Constructors */
+    private final Player player;
     public PlayerWrapper(Player player) {
         this.player = player;
     }
+    public PlayerWrapper(UUID uuid) {
+        this.player = Bukkit.getPlayer(uuid);
+    }
 
+    /* Bukkit methods */
     @Override
     public @NotNull Component displayName() {
         return player.displayName();

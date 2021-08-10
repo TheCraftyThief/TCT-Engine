@@ -1,5 +1,8 @@
 package club.thecraftythief.engine.entity;
 
+import club.thecraftythief.engine.data.DataStore;
+import club.thecraftythief.engine.model.ModelMgr;
+import club.thecraftythief.engine.player.PlayerWrapper;
 import com.destroystokyo.paper.block.TargetBlockInfo;
 import com.destroystokyo.paper.entity.TargetEntityInfo;
 import net.kyori.adventure.text.Component;
@@ -39,12 +42,32 @@ import java.util.UUID;
 
 public class Model implements ArmorStand {
 
-    private ArmorStand model;
+    /* Custom methods and data */
+    public final static String BEING_CARRIED_KEY = "being_carried";
 
+    public PlayerWrapper getCarrier() {
+        String carrierID = DataStore.read(model, BEING_CARRIED_KEY);
+        if (carrierID != null) {
+            UUID carrierUUID = UUID.fromString(carrierID);
+            return new PlayerWrapper(carrierUUID);
+        }
+        return null;
+    }
+    public void setCarrier(Player player) {
+        if(player == null) {
+            DataStore.clear(model, BEING_CARRIED_KEY);
+            return;
+        }
+        DataStore.store(model, BEING_CARRIED_KEY, player.getUniqueId().toString());
+    }
+
+    /* Constructor(s) */
+    private ArmorStand model;
     public Model(ArmorStand model) {
         this.model = model;
     }
 
+    /* Bukkit methods */
     @Override
     public @NotNull ItemStack getItemInHand() {
         return model.getItemInHand();

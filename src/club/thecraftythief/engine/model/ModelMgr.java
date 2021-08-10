@@ -1,6 +1,7 @@
 package club.thecraftythief.engine.model;
 
 import club.thecraftythief.engine.data.DataStore;
+import club.thecraftythief.engine.entity.Model;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.ArmorStand;
@@ -108,15 +109,15 @@ public class ModelMgr {
     }
 
     //All of the model entities in a given world
-    public List<ArmorStand> getSpawnedModels(World world) {
-        List<ArmorStand> models = new ArrayList<>();
+    public List<Model> getSpawnedModels(World world) {
+        List<Model> models = new ArrayList<>();
         List<Entity> entities = world.getEntities();
 
         for (Entity ent : entities) {
             if (ent instanceof ArmorStand) {
                 ArmorStand stand = (ArmorStand) ent;
                 if (isModel(stand)) {
-                    models.add(stand);
+                    models.add(new Model(stand));
                 }
             }
         }
