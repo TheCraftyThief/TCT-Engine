@@ -1,7 +1,5 @@
 package club.thecraftythief.engine.command;
 
-import club.thecraftythief.engine.Engine;
-import club.thecraftythief.engine.map.RoomMgr;
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Subcommand;

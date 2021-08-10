@@ -13,7 +13,6 @@ import com.sk89q.worldedit.regions.CuboidRegion;
 import com.sk89q.worldedit.session.ClipboardHolder;
 import com.sk89q.worldedit.util.io.Closer;
 import com.sk89q.worldedit.world.block.BlockState;
-import com.sk89q.worldedit.world.block.BlockStateHolder;
 import com.sk89q.worldedit.world.block.BlockType;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -35,14 +34,15 @@ public class WEWrapper {
         }
         return false;
     }
+
     public static Clipboard loadSchematic(String fileName) throws Exception {
         File schematicFile = new File(fileName);
-        if(!schematicFile.exists()) {
-            throw new Exception("Cannot find schematic file \""+fileName+"\"");
+        if (!schematicFile.exists()) {
+            throw new Exception("Cannot find schematic file \"" + fileName + "\"");
         }
 
         ClipboardFormat fileFormat = ClipboardFormats.findByFile(schematicFile);
-        if(fileFormat == null) {
+        if (fileFormat == null) {
             throw new Exception("Unknown schematic file format!");
         }
 
@@ -75,9 +75,9 @@ public class WEWrapper {
     }
 
     public static void pos(int posNum, Location posLoc) {
-        if(posNum >= 2) {
+        if (posNum >= 2) {
             try {
-                throw new Exception("Invalid selection position \""+posNum+"\"");
+                throw new Exception("Invalid selection position \"" + posNum + "\"");
             } catch (Exception e) {
                 e.printStackTrace();
             }

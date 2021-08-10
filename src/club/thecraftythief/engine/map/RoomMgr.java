@@ -12,6 +12,7 @@ public class RoomMgr {
 
     private List<Room> roomList;
 
+    // TODO: Do javadocs for all methods like done in PartyMgr
     public RoomMgr() {
         roomList = new ArrayList<>();
     }

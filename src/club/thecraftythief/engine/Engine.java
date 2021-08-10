@@ -15,11 +15,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Engine extends JavaPlugin {
 
     private static Engine instance;
+    private static RoomMgr roomMgr;
+
     public static Engine getInstance() {
         return instance;
     }
 
-    private static RoomMgr roomMgr;
     public static RoomMgr getRoomMgr() {
         return roomMgr;
     }

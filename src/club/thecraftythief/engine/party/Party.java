@@ -6,22 +6,42 @@ import java.util.UUID;
 
 public class Party {
     private UUID owner;
-    private List<UUID> members;
+    private List<UUID> players;
 
+    /**
+     * Create a new empty party
+     *
+     * @param owner the owner of the party
+     */
     public Party(UUID owner) {
         this.owner = owner;
-        this.members = new ArrayList<UUID>();
+        this.players = new ArrayList<UUID>();
     }
 
-    public boolean addMember(UUID member) {
-        return this.members.add(member);
+    /**
+     * Add a player to the party
+     *
+     * @param player The player to add to the party
+     */
+    public void addPlayer(UUID player) {
+        this.players.add(player);
     }
 
+    /**
+     * Get the owner of the current party
+     *
+     * @return UUID The owners UUID
+     */
     public UUID getOwner() {
         return this.owner;
     }
 
-    public List<UUID> getMembers() {
-        return this.members;
+    /**
+     * Gets all players in the current party
+     *
+     * @return List<UUID> Get a list of all players in the party
+     */
+    public List<UUID> getPlayers() {
+        return this.players;
     }
 }

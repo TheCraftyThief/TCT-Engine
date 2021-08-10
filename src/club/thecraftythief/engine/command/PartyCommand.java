@@ -52,7 +52,7 @@ public class PartyCommand extends BaseCommand {
         partyMgr.addPartyInvite(party, player.getPlayer().getUniqueId());
 
         runner.sendMessage("Invited " + ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + player.getPlayer().getName() + ChatColor.RESET + " to your party!");
-        player.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + runner.getName() + ChatColor.RESET  + " invited you to a party!");
+        player.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + runner.getName() + ChatColor.RESET + " invited you to a party!");
     }
 
     @Subcommand("kick")

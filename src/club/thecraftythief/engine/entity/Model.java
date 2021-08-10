@@ -40,6 +40,7 @@ import java.util.UUID;
 public class Model implements ArmorStand {
 
     private ArmorStand model;
+
     public Model(ArmorStand model) {
         this.model = model;
     }
@@ -393,7 +394,7 @@ public class Model implements ArmorStand {
 
     @Override
     public int getBeeStingerCooldown() {
-         return model.getBeeStingerCooldown();
+        return model.getBeeStingerCooldown();
     }
 
     @Override
@@ -412,7 +413,8 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public int getMaximumNoDamageTicks() {return model.getMaximumNoDamageTicks();
+    public int getMaximumNoDamageTicks() {
+        return model.getMaximumNoDamageTicks();
     }
 
     @Override
@@ -511,13 +513,13 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public void setCanPickupItems(boolean pickup) {
-        model.setCanPickupItems(pickup);
+    public boolean getCanPickupItems() {
+        return model.getCanPickupItems();
     }
 
     @Override
-    public boolean getCanPickupItems() {
-        return model.getCanPickupItems();
+    public void setCanPickupItems(boolean pickup) {
+        model.setCanPickupItems(pickup);
     }
 
     @Override
@@ -596,13 +598,13 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public void setCollidable(boolean collidable) {
-        model.setCollidable(collidable);
+    public boolean isCollidable() {
+        return model.isCollidable();
     }
 
     @Override
-    public boolean isCollidable() {
-        return model.isCollidable();
+    public void setCollidable(boolean collidable) {
+        model.setCollidable(collidable);
     }
 
     @Override
@@ -626,13 +628,13 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public void setInvisible(boolean invisible) {
-        model.setInvisible(invisible);
+    public boolean isInvisible() {
+        return model.isInvisible();
     }
 
     @Override
-    public boolean isInvisible() {
-        return model.isInvisible();
+    public void setInvisible(boolean invisible) {
+        model.setInvisible(invisible);
     }
 
     @Override
@@ -731,7 +733,8 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public double getHealth() {return model.getHealth();
+    public double getHealth() {
+        return model.getHealth();
     }
 
     @Override
@@ -775,13 +778,13 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public void setVelocity(@NotNull Vector velocity) {
-        model.setVelocity(velocity);
+    public @NotNull Vector getVelocity() {
+        return model.getVelocity();
     }
 
     @Override
-    public @NotNull Vector getVelocity() {
-        return model.getVelocity();
+    public void setVelocity(@NotNull Vector velocity) {
+        model.setVelocity(velocity);
     }
 
     @Override
@@ -855,18 +858,13 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public int getMaxFireTicks() {
-        return model.getMaxFireTicks();
-    }
-
-    @Override
     public void setFireTicks(int ticks) {
         model.setFireTicks(ticks);
     }
 
     @Override
-    public void setVisualFire(boolean fire) {
-        model.setVisualFire(fire);
+    public int getMaxFireTicks() {
+        return model.getMaxFireTicks();
     }
 
     @Override
@@ -875,18 +873,23 @@ public class Model implements ArmorStand {
     }
 
     @Override
+    public void setVisualFire(boolean fire) {
+        model.setVisualFire(fire);
+    }
+
+    @Override
     public int getFreezeTicks() {
         return model.getFreezeTicks();
     }
 
     @Override
-    public int getMaxFreezeTicks() {
-        return model.getMaxFreezeTicks();
+    public void setFreezeTicks(int ticks) {
+        model.setFreezeTicks(ticks);
     }
 
     @Override
-    public void setFreezeTicks(int ticks) {
-        model.setFreezeTicks(ticks);
+    public int getMaxFreezeTicks() {
+        return model.getMaxFreezeTicks();
     }
 
     @Override
@@ -995,13 +998,13 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public void setLastDamageCause(@Nullable EntityDamageEvent event) {
-        model.setLastDamageCause(event);
+    public @Nullable EntityDamageEvent getLastDamageCause() {
+        return model.getLastDamageCause();
     }
 
     @Override
-    public @Nullable EntityDamageEvent getLastDamageCause() {
-        return model.getLastDamageCause();
+    public void setLastDamageCause(@Nullable EntityDamageEvent event) {
+        model.setLastDamageCause(event);
     }
 
     @Override
@@ -1045,18 +1048,13 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public void setCustomNameVisible(boolean flag) {
-        model.setCustomNameVisible(flag);
-    }
-
-    @Override
     public boolean isCustomNameVisible() {
         return model.isCustomNameVisible();
     }
 
     @Override
-    public void setGlowing(boolean flag) {
-        model.setGlowing(flag);
+    public void setCustomNameVisible(boolean flag) {
+        model.setCustomNameVisible(flag);
     }
 
     @Override
@@ -1065,13 +1063,18 @@ public class Model implements ArmorStand {
     }
 
     @Override
-    public void setInvulnerable(boolean flag) {
-        model.setInvulnerable(flag);
+    public void setGlowing(boolean flag) {
+        model.setGlowing(flag);
     }
 
     @Override
     public boolean isInvulnerable() {
         return model.isInvulnerable();
+    }
+
+    @Override
+    public void setInvulnerable(boolean flag) {
+        model.setInvulnerable(flag);
     }
 
     @Override

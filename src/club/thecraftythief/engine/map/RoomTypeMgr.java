@@ -7,6 +7,7 @@ public class RoomTypeMgr {
 
     private List<IRoomType> roomTypeList;
 
+    // TODO: Do javadocs for all methods like done in PartyMgr
     public RoomTypeMgr() {
         roomTypeList = new ArrayList<>();
 
@@ -18,8 +19,8 @@ public class RoomTypeMgr {
     }
 
     public IRoomType getRoomType(String roomType) {
-        for(IRoomType room : roomTypeList) {
-            if(room.getTypeName().equals(roomType)) {
+        for (IRoomType room : roomTypeList) {
+            if (room.getTypeName().equals(roomType)) {
                 return room;
             }
         }

@@ -17,6 +17,7 @@ public class Room {
     public IRoomType getRoomType() {
         return roomType;
     }
+
     public Location getOrigin() {
         return origin;
     }

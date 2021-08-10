@@ -18,6 +18,7 @@ public class ModelMgr {
     private static ModelMgr instance;
     private final List<ModelData> models;
 
+    // TODO: Do javadocs for all methods like done in PartyMgr
     public ModelMgr() {
         instance = this;
         models = new ArrayList<ModelData>();
